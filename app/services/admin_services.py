@@ -85,7 +85,7 @@ def get_users():
 @admin_services_bp.route('/vehicles/<username>', methods=['GET'])
 def get_vehicles(username):
     try:
-        query = text("SELECT VehicleNumber FROM vehicle WHERE UserName = :username")
+        query = text("SELECT RegNo FROM vehicle WHERE UserName = :username")
         result = db.session.execute(query, {'username': username})
         vehicles = [row[0] for row in result]
         return jsonify(vehicles), 200
@@ -149,7 +149,7 @@ def update_claim(claim_number):
         if not claim:
             return jsonify({'error': 'Claim not found'}), 404
 
-        claim.vehicle_number = data.get('vehicleNumber', claim.vehicle_number)
+        claim.vehicle_number = data.get('regNo', claim.vehicle_number)
         claim.client_name = data.get('clientName', claim.client_name)
         claim.insurance_company = data.get('insuranceCompany', claim.insurance_company)
 

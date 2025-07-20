@@ -14,7 +14,7 @@ MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
 MAIL_DEFAULT_SENDER = os.getenv('MAIL_DEFAULT_SENDER')
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__ , static_url_path='/files', static_folder='files')
     app.config.from_object(Config)
 
     db.init_app(app)

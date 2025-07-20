@@ -112,7 +112,6 @@ DROP TABLE IF EXISTS `vehicle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehicle` (
-  `VehicleNumber` varchar(100) NOT NULL,
   `UserName` varchar(100) DEFAULT NULL,
   `RegNo` varchar(100) DEFAULT NULL,
   `Type` varchar(100) DEFAULT NULL,
@@ -121,7 +120,6 @@ CREATE TABLE `vehicle` (
   `ChassisNumber` varchar(100) DEFAULT NULL,
   `EngineNumber` varchar(100) DEFAULT NULL,
   `InsuranceNumber` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`VehicleNumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
